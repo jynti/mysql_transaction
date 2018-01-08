@@ -1,8 +1,9 @@
-mysql> create database bank;
+mysql> CREATE DATABASE bank;
 Query OK, 1 row affected (0.01 sec)
 
-mysql> use bank;
+mysql> USE bank;
 Database changed
+
 
 mysql> CREATE TABLE accounts
     -> (
@@ -47,7 +48,7 @@ mysql> UPDATE accounts
     -> (
     -> SELECT account_no
     -> FROM users
-    -> WHERE name='userA'
+    -> WHERE id=1
     -> );
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
@@ -56,8 +57,8 @@ mysql> SELECT * FROM accounts;
 +----+------------+---------+
 | id | account_no | balance |
 +----+------------+---------+
-|  2 |          1 |    1000 |
-|  3 |          2 |       0 |
+|  1 |          1 |    1000 |
+|  2 |          2 |       0 |
 +----+------------+---------+
 2 rows in set (0.00 sec)
 
@@ -67,16 +68,17 @@ mysql> UPDATE accounts
     -> (
     -> SELECT account_no
     -> FROM users
-    -> where name='userA'
+    -> where id=1
     -> );
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-mysql> SELECT * FROM accounts;                                                 +----+------------+---------+
+mysql> SELECT * FROM accounts;
++----+------------+---------+
 | id | account_no | balance |
 +----+------------+---------+
-|  2 |          1 |     500 |
-|  3 |          2 |       0 |
+|  1 |          1 |     500 |
+|  2 |          2 |       0 |
 +----+------------+---------+
 2 rows in set (0.00 sec)
 
@@ -86,7 +88,7 @@ mysql> UPDATE accounts
     -> (
     -> SELECT account_no
     -> FROM users
-    -> WHERE name='userA'
+    -> WHERE id=1
     -> );
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
@@ -96,8 +98,8 @@ mysql> SELECT * FROM accounts;
 +----+------------+---------+
 | id | account_no | balance |
 +----+------------+---------+
-|  2 |          1 |     300 |
-|  3 |          2 |       0 |
+|  1 |          1 |     300 |
+|  2 |          2 |       0 |
 +----+------------+---------+
 2 rows in set (0.00 sec)
 
@@ -108,7 +110,7 @@ mysql> UPDATE accounts
     -> (
     -> SELECT account_no
     -> FROM users
-    -> WHERE name='userB'
+    -> WHERE id=2
     -> );
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
@@ -117,8 +119,8 @@ mysql> SELECT * FROM accounts;
 +----+------------+---------+
 | id | account_no | balance |
 +----+------------+---------+
-|  2 |          1 |     300 |
-|  3 |          2 |     200 |
+|  1 |          1 |     300 |
+|  2 |          2 |     200 |
 +----+------------+---------+
 2 rows in set (0.00 sec)
 
