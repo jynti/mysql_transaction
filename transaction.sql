@@ -44,12 +44,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 mysql> UPDATE accounts
     -> SET balance=balance+1000
-    -> WHERE account_no=
-    -> (
-    -> SELECT account_no
-    -> FROM users
-    -> WHERE id=1
-    -> );
+    -> WHERE account_no=1;
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
@@ -64,12 +59,7 @@ mysql> SELECT * FROM accounts;
 
 mysql> UPDATE accounts
     -> SET balance=balance-500
-    -> WHERE account_no=
-    -> (
-    -> SELECT account_no
-    -> FROM users
-    -> where id=1
-    -> );
+    -> WHERE account_no=1;
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
@@ -84,12 +74,7 @@ mysql> SELECT * FROM accounts;
 
 mysql> UPDATE accounts
     -> SET balance=balance-200
-    -> WHERE account_no=
-    -> (
-    -> SELECT account_no
-    -> FROM users
-    -> WHERE id=1
-    -> );
+    -> WHERE account_no=1;
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
@@ -106,12 +91,7 @@ mysql> SELECT * FROM accounts;
 
 mysql> UPDATE accounts
     -> SET balance=balance+200
-    -> WHERE account_no=
-    -> (
-    -> SELECT account_no
-    -> FROM users
-    -> WHERE id=2
-    -> );
+    -> WHERE account_no=2;
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
